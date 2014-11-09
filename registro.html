@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nueva cuenta / 35mm.com</title>
+
+	<link rel="stylesheet" type="text/css" href="css/styleAlt.css" media="screen" title="Principal">
+	<link rel="alternate stylesheet" type="text/css" href="css/style.css" media="screen" title="Alternativo">
+	<link rel="alternate stylesheet" type="text/css" href="css/access.css" media="screen" title="Accesible">
+	<link rel="stylesheet" type="text/css" href="css/print.css" media="print">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+	<script type="text/javascript" src="js/estilos.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+	
+</head>
+<body>
+	<div id="navegacion"><!--Barra de navg-->
+			<nav class="navegacion">
+				<ul>
+					<li><a href="index.html"><h1>35mm.com</h1></a></li>
+					<li>
+						<form class='basicBusq' action="resbusq.html">
+							<input type="search">
+							<input type="submit" value="Buscar">
+						</form>
+					</li>
+					<li><a href="busqueda.html">Busqueda Avanzada</a></li>
+					<li id="login">
+						<form class='login' action="#">
+							<input type="text" placeholder='Usuario'>
+							<input type="password" placeholder='Contraseña'>
+							<input type="submit" value='Entrar'>
+						</form>
+					</li>
+					<li> 
+						<select name="estilos" id="selEstilos">
+
+						</select>
+					</li>
+				</ul>
+			</nav>
+		</div>
+			
+	<div id="cuerpoReg"><br>
+		<div class="registro">
+			<form class='registroForm' action="#" onsubmit="return(validate(this));">
+				<input type="text" name="name" placeholder='Nombre de usuario'>
+				<input type="email" name="email" placeholder='Email'>
+				<input type="password" name="password" placeholder='Contraseña'>
+				<input type="password" name="passRep" placeholder='Repite contraseña'>
+				<select name="Sexo" required>
+					<option value="hombre">Hombre</option>
+					<option value="mujer">Mujer</option>
+				</select>
+				<input type="text" name="fecha"> Fecha de nacimiento
+				<input type="text" name="ciudad" placeholder='Ciudad'>
+				<input type="text" name="pais" placeholder='País'>
+				Foto <input type="file">
+				<input class="button" type="submit" value='Registrarse'>
+			</form>
+		</div>
+	</div>
+
+	<footer id="footer">
+		<div class="footerNav">
+		    <ul>
+		        <li><a href="#">Link1</a></li>
+		        <li><a href="#">Link2</a></li>
+		        <li><a href="#">Link3</a></li>
+		        <li><a href="#">Link4</a></li>
+		    </ul>
+		</div>
+		<p>35mm.com 2014</p>
+	</footer>
+</body>
+</html>

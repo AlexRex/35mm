@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Título de la foto / 35mm.com</title>
+
+	<link rel="stylesheet" type="text/css" href="css/styleAlt.css" media="screen" title="Principal">
+	<link rel="alternate stylesheet" type="text/css" href="css/style.css" media="screen" title="Alternativo">
+	<link rel="alternate stylesheet" type="text/css" href="css/access.css" media="screen" title="Accesible">
+	<link rel="stylesheet" type="text/css" href="css/print.css" media="print">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+	<script type="text/javascript" src="js/estilos.js"></script>
+	
+</head>
+<body>
+	<div id="navegacion"><!--Barra de navg-->
+			<nav class="navegacion">
+				<ul>
+					<li><a href="index.html"><h1>35mm.com</h1></a></li>
+					<li>
+						<form class='basicBusq' action="resbusq.html">
+							<input type="search">
+							<input type="submit" value="Buscar">
+						</form>
+					</li>
+					<li><a href="busqueda.html">Busqueda Avanzada</a></li>
+					<li id="login">
+						<form class='login' action="#">
+							<input type="text" placeholder='Usuario'>
+							<input type="password" placeholder='Contraseña'>
+							<input type="submit" value='Entrar'>
+						</form>
+					</li>
+					<li> 
+						<select name="estilos" id="selEstilos">
+
+						</select>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	<div id="cuerpoFoto">
+		<div class="detalleFoto">
+			<div class="foto">
+				<img src="img/foto.png" alt="">
+				<h2>Título de la foto</h2>
+			</div>
+			<div class="datosFoto">
+				<p>10 / Octubre / 2014 <br> London, UK <br> Alex Rex</p>
+			</div>
+			<div class="albumes">
+				<h4>Álbumes: </h4>
+				<ul>
+				<li><a href="#">Álbum1</a></li>
+				<li><a href="#">Álbum2</a></li>
+				<li><a href="#">Álbum3</a></li>
+				</ul>
+			</div>
+			<div class="comentarios">
+				<h4>Comentarios</h4>
+				<ul>
+					<li>
+						<h5>Alex:</h5>
+						<p>Más mola.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<footer id="footer">
+		<div class="footerNav">
+		    <ul>
+		        <li><a href="#">Link1</a></li>
+		        <li><a href="#">Link2</a></li>
+		        <li><a href="#">Link3</a></li>
+		        <li><a href="#">Link4</a></li>
+		    </ul>
+		</div>
+		<p>35mm.com 2014</p>
+	</footer>
+</body>
+</html>

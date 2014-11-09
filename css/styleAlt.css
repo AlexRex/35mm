@@ -1,0 +1,253 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+
+html, body{
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial;
+	font-size: 1em;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:hover{
+	opacity: 0.6;
+}
+
+.albumes a{
+	color: #000;
+	border-bottom: 1px #000 solid;
+}
+
+
+
+#cuerpoInicio{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	text-align: center;
+}
+
+#cuerpoResBusq{
+	min-height: 80.1%;
+	padding-top: 60px;
+	padding-bottom: 50px;
+}
+
+.ordenNombre{
+	font-size: 0.8em;
+	font-weight: 700;
+}
+
+#cuerpoBusq{
+	min-height: 80.1%;
+	padding-top: 60px;
+	padding-bottom: 50px;
+}
+
+#cuerpoFoto{
+	min-height: 85.1%;
+	padding-top: 40px;
+	padding-bottom: 190px;
+
+}
+
+.foto h2, #cuerpoResBusq h2, #cuerpoResBusq h4, .ordenes, .comentarios{
+	padding-left: 40px
+}
+
+.foto h2{
+	text-align: left;
+}
+
+
+.foto{
+	padding: 20px 0 20px 0;
+	margin-bottom: 40px;
+	text-align: center;
+	background: #fff;
+	color: #000;
+}
+
+
+
+.datosFoto, .albumes{
+	float: right;
+	margin-right: 50px;
+}
+
+.albumes ul{
+	float: right;
+}
+
+
+
+#cuerpoReg{
+	height: 100%;
+	background: url('../img/foto3.jpg') no-repeat center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    margin-top:50px;
+
+}
+
+#footer{
+	background: #2c3e50;
+	color: #ecf0f1;
+	margin: 0 auto;
+	height: 50px;
+
+}
+#footer a{
+	color: #ecf0f1;
+}
+
+.footerNav{
+	padding-top: 5px;
+}
+
+.registro{
+	width: 350px;
+	height: 450px;
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid;
+	border-color: #ecf0f1;
+	margin-top: 50px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.contenedor{
+	width: 350px;
+	height: 120px;
+	float: right;
+	margin-top: 45px;
+	margin-right: 45px;
+}
+
+.registroForm, .basicRegistr{
+	width: 280px;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+.busqueda{
+	padding-left: 40px;
+}
+
+.busquedaForm{
+	padding-top: 10px;
+	width: 350px;
+	text-align: left;
+}
+
+
+
+.contenedor form input[type=text],
+.contenedor form input[type=password],
+.contenedor form input[type=email],
+.registro form input[type=text],
+.registro form input[type=password],
+.registro form input[type=email],
+.busquedaForm input[type=text]{
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  background: #eee;
+  border: none;
+  outline: none;
+}
+
+input[type="search"], .login input[type='text'], .login input[type='password']{
+    color:#000;
+/*removing boder from search box*/
+    border:none;
+
+    background-color:#bdc3c7;
+}
+
+#navegacion{
+	width: 100%;
+	top: 0;
+	background: #2c3e50;
+	height: 50px;
+	position: fixed;
+}
+
+.navegacion{
+	padding-bottom: 14px;
+	color: #ecf0f1;
+}
+
+#navegacion a{
+	color: #ecf0f1;
+}
+
+#navegacion h1{
+	margin-top: -5px;
+}
+
+
+
+#header {
+	height: 100%;
+	background: url('../img/foto2.jpg') no-repeat center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    margin-top: 50px;
+}
+
+
+
+
+h1, h2{
+	margin: 0;
+	padding: 0;
+}
+
+ul{
+	list-style: none;
+}
+li{
+	display: inline;
+	float: left;
+	padding-right: 30px;
+}
+
+
+
+/* #Nephritis Flat Button
+==================================================*/
+.button {
+  margin-top: 8px;
+  vertical-align: top;
+  width: 105%;
+  height: 25px;
+  padding: 0;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background: #34495e;
+    border: 0;
+    border-bottom: 2px solid #2c3e50;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 -2px #2c3e50;
+    box-shadow: inset 0 -2px #2c3e50;
+}
+.button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+

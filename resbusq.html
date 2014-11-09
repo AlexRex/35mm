@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Resultado Búsqueda / 35mm.com</title>
+
+	
+	<link rel="stylesheet" type="text/css" href="css/styleAlt.css" media="screen" title="Principal">
+	<link rel="alternate stylesheet" type="text/css" href="css/style.css" media="screen" title="Alternativo">
+	<link rel="alternate stylesheet" type="text/css" href="css/access.css" media="screen" title="Accesible">
+	<link rel="stylesheet" type="text/css" href="css/print.css" media="print">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+	<script type="text/javascript" src="js/orden.js"></script>
+	<script type="text/javascript" src="js/estilos.js"></script>
+	
+
+	
+</head>
+<body>
+	<div id="navegacion"><!--Barra de navg-->
+			<nav class="navegacion">
+				<ul>
+					<li><a href="index.html"><h1>35mm.com</h1></a></li>
+					<li>
+						<form class='basicBusq' action="resbusq.html">
+							<input type="search">
+							<input type="submit" value="Buscar">
+						</form>
+					</li>
+					<li><a href="busqueda.html">Busqueda Avanzada</a></li>
+					<li id="login">
+						<form class='login' action="#">
+							<input type="text" placeholder='Usuario'>
+							<input type="password" placeholder='Contraseña'>
+							<input type="submit" value='Entrar'>
+						</form>
+					</li>
+					<li> 
+						<select name="estilos" id="selEstilos">
+
+						</select>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	<div id="cuerpoResBusq">
+		<h2>Resultado de la búsqueda: AAAA</h2>
+		<h4>Ordenar:</h4>  
+		<div class="ordenes">
+			<span class="ordenNombre">Nombre</span > <input type="button" id="ordenNombre" value="Ascendente">
+			<span class="ordenNombre">País</span> <input type="button" id="ordenPais" value="Ascendente">
+			<span class="ordenNombre">Fecha</span> <input type="button" id="ordenFecha" value="Ascendente">
+
+		</div>
+		<div class="carouselResultado" >
+			<ul id="listaResultado">
+			<li><a href="foto.html"><img src="img/img.png" alt=""></a>
+				<h3>Casa</h3>
+				<div>Spain</div>
+				<div>24 / 05 / 1998</div>
+				<div>Autor</div>
+			</li>
+			<li><a href="foto.html"><img src="img/img.png" alt=""></a>
+				<h3>Zimbaue</h3>
+				<div>Zimbaue</div>
+				<div>14 / 02 / 2012</div>
+				<div>Autor</div>			
+			</li>
+			<li><a href="foto.html"><img src="img/img.png" alt=""></a>
+				<h3>Pekin</h3>
+				<div>Inglaterra</div>
+				<div>03 / 10 / 2002</div>
+				<div>Autor</div>			
+			</li>
+			<li><a href="foto.html"><img src="img/img.png" alt=""></a>
+				<h3>Roma</h3>
+				<div>Alemania</div>
+				<div>04 / 11 / 2002</div>
+				<div>Autor</div>			
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<footer id="footer">
+		<div class="footerNav">
+		    <ul>
+		        <li><a href="#">Link1</a></li>
+		        <li><a href="#">Link2</a></li>
+		        <li><a href="#">Link3</a></li>
+		        <li><a href="#">Link4</a></li>
+		    </ul>
+		</div>
+		<p>35mm.com 2014</p>
+	</footer>
+</body>
+</html>
