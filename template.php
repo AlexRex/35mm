@@ -1,8 +1,8 @@
 <?php
 
-$title = "Inicio";
+$title = "Inicio / 35mm.com";
 
-require_once('header.inc');
+require_once('partials/header.inc');
 
 
 ?>
@@ -11,6 +11,6 @@ require_once('header.inc');
 
 <?php
 
-require_once('footer.inc');
+require_once('partials/footer.inc');
 
 ?>
