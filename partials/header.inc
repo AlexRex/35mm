@@ -32,7 +32,7 @@
             </li>
             <li><a href="../35mm/busqueda.php">Busqueda Avanzada</a></li>
             <li id="login">
-                <form class='login' method="post" action="#" onsubmit="return(validateLogin(this));">
+                <form class='login' method="post" action="accessControl.php" onsubmit="return(validateLogin(this));">
                     <input type="text" name="name" placeholder='Usuario'>
                     <input type="password" name="password" placeholder='Contraseña'>
                     <input type="submit" value='Entrar'>

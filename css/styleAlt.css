@@ -4,9 +4,18 @@
 html, body{
 	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial,serif;
 	font-size: 1em;
+    font-weight: 300;
 	padding: 0;
 	margin: 0;
 	height: 100%;
+}
+
+h1{
+    font-weight: 400;
+}
+
+h2{
+    font-weight: 400;
 }
 
 a{
@@ -95,6 +104,61 @@ a:hover{
 
 }
 
+#cuerpoCuenta{
+    margin-top: 50px;
+}
+
+.headerUsuario{
+    background: url('https://ununsplash.imgix.net/photo-1415226161018-3ec581fa733d?q=75&fm=jpg&s=e3b2f96ffa81ec79445ba2f90ef1c672') no-repeat center ;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 350px;
+    color: white;
+    position: relative;
+
+}
+
+.descUsuario{
+    background-color: rgba(40,40,40,0.3);
+    position: absolute;
+    bottom: 0;
+    padding-top: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.imgUser{
+    width: 60px;
+    height: 60px;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    background: url(http://cdn.bavotasan.com/wp-content/uploads/2011/02/desktop.jpg) no-repeat center;
+    background-size: 100%;
+    border: medium solid;
+}
+
+.imgUser img {
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+
+
+.navUsuario{
+    padding-left: 10px;
+    padding-bottom: 50px;
+}
+
+.listNavUsuario{
+    vertical-align: middle;
+}
+
+
 #footer{
 	background: #2c3e50;
 	color: #ecf0f1;
@@ -177,6 +241,7 @@ input[type="search"], .login input[type='text'], .login input[type='password']{
 	background: #2c3e50;
 	height: 50px;
 	position: fixed;
+    z-index: 10;
 }
 
 .navegacion{

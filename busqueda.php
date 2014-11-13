@@ -10,7 +10,7 @@ require_once('partials/header.inc');
     <div id="cuerpoBusq">
         <div class="busqueda">
             <h2>Búsqueda avanzada</h2>
-            <form class='busquedaForm' action="resbusq.php" method="get">
+            <form class='busquedaForm' action="formulario.php" method="get">
                 <input type="text" name="titulo" placeholder='Título'>
                 <input type="text" name="fecha" placeholder='Fecha'>
                 <input type="text" name="pais" placeholder='País'>
