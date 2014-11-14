@@ -1,6 +1,7 @@
 <?php
 
-$title = "Inicio / 35mm.com";
+$title = "Foto: Titulo / 35mm.com";
+$idFoto= $_GET["id"];
 
 require_once('partials/header.inc');
 
@@ -14,7 +15,7 @@ require_once('partials/header.inc');
                 <h2>Título de la foto</h2>
             </div>
             <div class="datosFoto">
-                <p>10 / Octubre / 2014 <br> London, UK <br> Alex Rex</p>
+                <p>10 / Octubre / 2014 <br> London, UK <br> Alex Rex <br/> ID: <?php echo $idFoto ?> </p>
             </div>
             <div class="albumes">
                 <h4>Álbumes: </h4>

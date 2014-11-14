@@ -1,6 +1,6 @@
 <?php
 
-$title = "Inicio / 35mm.com";
+$title = "Cuenta / 35mm.com";
 
 require_once('partials/header.inc');
 
@@ -25,7 +25,7 @@ require_once('partials/header.inc');
                 <li><a href="#">Mis Álbumes</a></li>
                 <li><a href="#">Mi Cuenta</a></li>
                 <li class="floatRight"><a href="#">Subir nueva imágen</a></li>
-                <li class="floatRight"><a href="#">Crear Álbum</a></li>
+                <li class="floatRight"><a href="crearAlbum.php">Crear Álbum</a></li>
             </ul>
         </div>
     </div>

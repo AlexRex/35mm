@@ -1,6 +1,6 @@
 <?php
 
-$title = "Inicio / 35mm.com";
+$title = "Búsqueda Avanzada / 35mm.com";
 
 require_once('partials/header.inc');
 
@@ -10,8 +10,8 @@ require_once('partials/header.inc');
     <div id="cuerpoBusq">
         <div class="busqueda">
             <h2>Búsqueda avanzada</h2>
-            <form class='busquedaForm' action="formulario.php" method="get">
-                <input type="text" name="titulo" placeholder='Título'>
+            <form class='busquedaForm' action="resbusq.php" method="get">
+                <input type="text" name="busq" placeholder='Título'>
                 <input type="text" name="fecha" placeholder='Fecha'>
                 <input type="text" name="pais" placeholder='País'>
                 <input type="text" name="autor" placeholder='Autor'>
