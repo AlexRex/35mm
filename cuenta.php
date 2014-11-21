@@ -1,8 +1,20 @@
 <?php
+require_once('partials/init.inc');
+
+session_start();
+$host  = $_SERVER['HTTP_HOST'];
+if(isset($_SESSION['usuarioSession'])){
+}
+else{
+    $extra = 'index.php';
+    header("Location: http://$host$uri/$extra");
+    exit;
+}
 
 $title = "Cuenta / 35mm.com";
 
 require_once('partials/header.inc');
+
 
 
 ?>

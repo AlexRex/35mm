@@ -1,7 +1,20 @@
 <?php
 
+require_once('partials/init.inc');
+
 $title = "Foto: Titulo / 35mm.com";
 $idFoto= $_GET["id"];
+
+
+session_start();
+$host  = $_SERVER['HTTP_HOST'];
+if(isset($_SESSION['usuarioSession'])){
+}
+else{
+    $extra = 'index.php';
+    header("Location: http://$host$uri/$extra");
+    exit;
+}
 
 require_once('partials/header.inc');
 

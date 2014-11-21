@@ -1,5 +1,21 @@
 <?php
 /**PHP**/
+require_once('init.inc');
+session_start();
+
+$user = null;
+$userRememb = false;
+$userLogged = false;
+
+if(isset($_SESSION['usuarioSession']))
+    $userLogged = true;
+
+else if(isset($_COOKIE['usuarioRecordar']) && !isset($_SESSION['usuarioSession'])){
+    $user = $_COOKIE['usuarioRecordar'];
+    $userRememb = true;
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -31,14 +47,38 @@
                 </form>
             </li>
             <li><a href="../35mm/busqueda.php">Busqueda Avanzada</a></li>
+            <?php if($userLogged==false && $userRememb == false ){ ?>
             <li id="login">
                 <form class='login' method="post" action="accessControl.php" onsubmit="return(validateLogin(this));">
                     <input type="text" name="name" placeholder='Usuario'>
                     <input type="password" name="password" placeholder='Contraseña'>
+                    <input type="checkbox" name="recordar"> Recordarme
                     <input type="submit" value='Entrar'>
+
                 </form>
             </li>
-
+            <?php } else if($userRememb==true && $userLogged==false){ ?>
+                <li id="login">
+                    <form class='login' method="post" action="returnAccess.php">
+                        <label>Bienvenido de nuevo <?php echo($user); ?></label>
+                        <input type="submit" value='Entrar'>
+                    </form>
+                </li>
+                <li>
+                    <form action="salir.php">
+                        <input type="submit" value="Salir"/>
+                    </form>
+                </li>
+            <?php } else{ ?>
+                <li id="login">
+                    <a href="cuenta.php">Mi cuenta</a>
+                </li>
+                <li>
+                    <form action="salir.php">
+                        <input type="submit" value="Salir"/>
+                    </form>
+                </li>
+            <?php }?>
             <li>
                 <select name="estilos" id="selEstilos">
 
