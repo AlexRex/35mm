@@ -30,13 +30,13 @@ $sentencia = 'SELECT * FROM albumes WHERE albumes.Usuario = '.$user['IdUsuarios'
 $resultado = $db->get($sentencia);
 
 
-
 $db->close();
 
 ?>
 <!--CONTENIDO-->
 
     <div id="cuerpoResBusq">
+        <h2>Mis álbumes</h2>
         <div class="carouselResultado" >
             <ul id="listaResultado">
                 <?php

@@ -41,7 +41,7 @@ require_once('partials/header.inc');
             <div class="descUsuario">
 
                 <div class="imgUser"><img src="http://cdn.bavotasan.com/wp-content/uploads/2011/02/desktop.jpg" alt=""/></div>
-                <h2>Alex Torres</h2>
+                <h2><?php echo($user['NomUsuario']) ?></h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

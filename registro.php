@@ -10,7 +10,7 @@ require_once('database/database.php');
 $db = new database();
 $conectada = $db->connect();
 
-$resultado = $db->getAll('paises');
+$resultado = $db->getAll('paises', 'NomPais', 'ASC');
 
 
 

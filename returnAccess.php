@@ -1,34 +1,38 @@
 <?php
 
 require_once('partials/init.inc');
+require_once('database/database.php');
 
 session_start();
 
-$user1 = array('name'=>'luthor', 'password'=>'1234');
-$user2 = array('name'=>'alex', 'password'=>'1234');
-
 $name = $_COOKIE['usuarioRecordar'];
 
-$extra = 'index.php';
 
-if(in_array($name, $user1)){
-        setcookie('usuarioRecordar', $name, time() + 365*24*60*60);
-        $_SESSION['usuarioSession'] = $user1;
-        $extra = 'cuenta.php';
-}
-else if(in_array($name, $user2)){
+$extra = 'index.php?log=error';
+
+$db = new database();
+$conectada = $db->connect();
+
+
+$resultado = $db->getOne('NomUsuario', 'usuarios', $name);
+
+$filas = mysqli_fetch_assoc($resultado);
+
+if($filas){
     setcookie('usuarioRecordar', $name, time() + 365*24*60*60);
-    $_SESSION['usuarioSession'] = $user2;
+    $_SESSION['usuarioSession'] = $filas;
     $extra = 'cuenta.php';
 }
 else{
     $extra = 'salir.php';
 }
 
-//setcookie('usuario', [$name, $password], time() + 365*24*60*60);
+$db->close();
 
 header("Location: http://$host$uri/$extra");
 exit;
 
 
 ?>
+
+

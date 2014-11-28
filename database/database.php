@@ -26,9 +26,9 @@ class database {
     }
 
     //Obtener todos los resultados de la tabla $tabla
-    public function getAll($tabla){
+    public function getAll($tabla, $ordenar, $ordenTipo){
 
-        $sentencia = 'SELECT * FROM'.' '.$tabla;
+        $sentencia = 'SELECT * FROM '.$tabla.' order by '.$ordenar.' '.$ordenTipo;
         $resultado = $this->mysqli->query($sentencia);
 
         return $resultado;

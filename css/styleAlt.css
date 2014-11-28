@@ -278,9 +278,11 @@ input[type="search"], .login input[type='text'], .login input[type='password']{
     color:#000;
 /*removing boder from search box*/
     border:none;
-
     background-color:#bdc3c7;
 }
+
+
+
 
 #navegacion{
 	width: 100%;

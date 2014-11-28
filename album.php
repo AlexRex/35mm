@@ -3,6 +3,7 @@
 $albumID= $_GET["id"];
 
 
+require_once('partials/init.inc');
 
 require_once('database/database.php');
 
@@ -16,6 +17,11 @@ $resultado = $db->get($sentencia);
 $resultadoAlbum = $db->get($sentencia2);
 
 $album = mysqli_fetch_assoc($resultadoAlbum);
+
+if(!$album){
+    $extra = '404.php';
+    header("Location: http://$host$uri/$extra");
+}
 
 $db->close();
 

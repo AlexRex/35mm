@@ -5,7 +5,7 @@ require_once('database/database.php');
 
 session_start();
 
-$extra = 'index.php';
+$extra = '404.php?log=error';
 
 $db = new database();
 $conectada = $db->connect();

@@ -19,11 +19,19 @@ $conectada = $db->connect();
 
 $sentencia = 'SELECT * from fotos left outer join paises on fotos.Pais = paises.IdPais left outer join usuarios on fotos.Usuario = usuarios.IdUsuarios where fotos.IdFoto = '.$idFoto;
 
-
 $resultado = $db->get($sentencia);
 
 $foto = mysqli_fetch_assoc($resultado);
+$sentencia = 'Select * from albumes where IdAlbum = '.$foto['Album'];
 
+$resultado = $db->get($sentencia);
+
+$album = mysqli_fetch_assoc($resultado);
+
+if(!$foto){
+    $extra = '404.php';
+    header("Location: http://$host$uri/$extra");
+}
 
 $db->close();
 
@@ -41,14 +49,7 @@ require_once('partials/header.inc');
             </div>
             <div class="datosFoto">
                 <p><?php echo($foto['Fecha']) ?><br> <?php echo($foto['NomPais']) ?> <br><?php echo($foto['NomUsuario']) ?> </p>
-            </div>
-            <div class="albumes">
-                <h4>Álbumes: </h4>
-                <ul>
-                    <li><a href="#">Álbum1</a></li>
-                    <li><a href="#">Álbum2</a></li>
-                    <li><a href="#">Álbum3</a></li>
-                </ul>
+                <p><?php echo('<a href="album.php?id='.$foto['Album'].'">'.$album['Titulo'].'</a>') ?></p>
             </div>
             <div class="comentarios">
                 <h4>Comentarios</h4>
