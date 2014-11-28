@@ -27,7 +27,6 @@ else{
 
 //setcookie('usuario', [$name, $password], time() + 365*24*60*60);
 
-
 header("Location: http://$host$uri/$extra");
 exit;
 

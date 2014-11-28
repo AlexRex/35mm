@@ -1,5 +1,22 @@
 <?php
 
+require_once('database/database.php');
+
+$db = new database();
+$conectada = $db->connect();
+
+$sentencia = 'SELECT * FROM fotos order by idFoto DESC limit 24';
+
+
+$resultado = $db->get($sentencia);
+
+
+
+$db->close();
+
+
+
+
 $title = "Inicio / 35mm.com";
 
 require_once('partials/header.inc');
@@ -21,29 +38,17 @@ require_once('partials/header.inc');
     </div>
     <div id="cuerpoInicio">
         <div class="carouselInicio">
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
-            <a href="foto.php"><img src="img/img.png" alt=""></a>
+
+            <ul id="listaResultado">
+
+                <?php
+
+
+                while($filas = mysqli_fetch_assoc($resultado)) {
+                    echo('<a href="foto.php?id='.$filas['IdFoto'].'"><img src="img/img.png" alt=""/></a>');
+                }
+                ?>
+            </ul>
 
         </div>
     </div>

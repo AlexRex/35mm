@@ -25,14 +25,15 @@ else if(isset($_COOKIE['usuarioRecordar']) && !isset($_SESSION['usuarioSession']
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $title; ?></title>
 
-    <link rel="stylesheet" type="text/css" href="../35mm/css/styleAlt.css" media="screen" title="Principal">
-    <link rel="alternate stylesheet" type="text/css" href="../35mm/css/style.css" media="screen" title="Alternativo">
-    <link rel="alternate stylesheet" type="text/css" href="../35mm/css/access.css" media="screen" title="Accesible">
-    <link rel="stylesheet" type="text/css" href="../35mm/css/print.css" media="print">
-    <link rel="icon" href="../35mm/img/favicon.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon"/>
-    <script type="text/javascript" src="../35mm/js/estilos.js"></script>
-    <script type="text/javascript" src="../35mm/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styleAlt.css" media="screen" title="Principal">
+    <link rel="alternate stylesheet" type="text/css" href="css/style.css" media="screen" title="Alternativo">
+    <link rel="alternate stylesheet" type="text/css" href="css/access.css" media="screen" title="Accesible">
+    <link rel="alternate stylesheet" href="css/prueba.css" media="screen" title="Prueba"/>
+    <link rel="stylesheet" type="text/css" href="css/print.css" media="print">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <script type="text/javascript" src="js/estilos.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 
 </head>
 <body>
@@ -52,7 +53,10 @@ else if(isset($_COOKIE['usuarioRecordar']) && !isset($_SESSION['usuarioSession']
                 <form class='login' method="post" action="accessControl.php" onsubmit="return(validateLogin(this));">
                     <input type="text" name="name" placeholder='Usuario'>
                     <input type="password" name="password" placeholder='Contraseña'>
-                    <input type="checkbox" name="recordar"> Recordarme
+                    <label>
+                        <input type="checkbox" name="recordar">
+                        Recordarme
+                    </label>
                     <input type="submit" value='Entrar'>
 
                 </form>

@@ -45,5 +45,8 @@ print_r($_REQUEST);
     <br />
     pais: <b><?php echo $_POST["pais"];?></b>
 </p>
+
+
 </body>
 </html>
+

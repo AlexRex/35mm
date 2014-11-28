@@ -9,8 +9,23 @@ $camaraBusq= $_GET["camara"];
 $title = "Resultado busqueda: ".$titBusq." / 35mm.com";
 
 
+
+
 require_once('partials/header.inc');
 
+require_once('database/database.php');
+
+$db = new database();
+$conectada = $db->connect();
+
+$sentencia = 'SELECT * FROM fotos left outer join paises on fotos.Pais = paises.IdPais where Titulo like "%'.$titBusq.'%" and nomPais like "%'.$paisBusq.'%" and Fecha like "%'.$fechaBusq.'%"';
+
+
+$resultado = $db->get($sentencia);
+
+
+
+$db->close();
 
 ?>
 <!--CONTENIDO-->
@@ -32,31 +47,14 @@ require_once('partials/header.inc');
 
         </div>
         <div class="carouselResultado" >
+
             <ul id="listaResultado">
-                <li><a href="foto.php?id=1"><img src="img/img.png" alt=""></a>
-                    <h3>Casa</h3>
-                    <div>Spain</div>
-                    <div>24 / 05 / 1998</div>
-                    <div>Autor</div>
-                </li>
-                <li><a href="foto.php?id=2"><img src="img/img.png" alt=""></a>
-                    <h3>Zimbaue</h3>
-                    <div>Zimbaue</div>
-                    <div>14 / 02 / 2012</div>
-                    <div>Autor</div>
-                </li>
-                <li><a href="foto.php?id=3"><img src="img/img.png" alt=""></a>
-                    <h3>Pekin</h3>
-                    <div>Inglaterra</div>
-                    <div>03 / 10 / 2002</div>
-                    <div>Autor</div>
-                </li>
-                <li><a href="foto.php?id=4"><img src="img/img.png" alt=""></a>
-                    <h3>Roma</h3>
-                    <div>Alemania</div>
-                    <div>04 / 11 / 2002</div>
-                    <div>Autor</div>
-                </li>
+                <?php
+
+                while($filas = mysqli_fetch_assoc($resultado)) {
+                    echo('<li><a href="foto.php?id='.$filas['IdFoto'].'"><img src="img/img.png" alt=""/></a><h3>'.$filas["Titulo"].'</h3><div>'.$filas['NomPais'].'</div><div>'.$filas['Fecha'].'</div><div></div></li>');
+                }
+                ?>
             </ul>
         </div>
     </div>

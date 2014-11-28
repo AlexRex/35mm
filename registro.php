@@ -4,7 +4,17 @@ $title = "Inicio / 35mm.com";
 
 
 require_once('partials/header.inc');
+require_once('database/database.php');
 
+
+$db = new database();
+$conectada = $db->connect();
+
+$resultado = $db->getAll('paises');
+
+
+
+$db->close();
 
 ?>
 <!--CONTENIDO-->
@@ -20,6 +30,16 @@ require_once('partials/header.inc');
                     <option value="mujer">Mujer</option>
                 </select>
                 <input type="text" name="fecha" placeholder="Fecha de Nacimiento">                <input type="text" name="ciudad" placeholder='Ciudad'>
+
+                <select name="pais">
+                    <option value=""></option>
+                    <?php
+
+                    while($filas = mysqli_fetch_assoc($resultado)) {
+                        echo('<option value="' . $filas["NomPais"] . '">' . $filas["NomPais"] . '</option>');
+                    }
+                    ?>
+                </select>
                 <input type="text" name="pais" placeholder='País'>
                 Foto <input type="file">
                 <input class="button" type="submit" value='Registrarse'>

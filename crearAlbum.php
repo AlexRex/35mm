@@ -3,7 +3,16 @@
 $title = "Crear Nuevo Álbum / 35mm.com";
 
 require_once('partials/header.inc');
+require_once('database/database.php');
 
+$db = new database();
+$conectada = $db->connect();
+
+$resultado = $db->getAll('paises');
+
+
+
+$db->close();
 
 ?>
 <!--CONTENIDO-->
@@ -14,7 +23,15 @@ require_once('partials/header.inc');
                 <input type="text" name="titulo" placeholder='Título'>
                 <input type="text" name="fecha" placeholder='Fecha'>
                 <input type="text" name="descripcion" placeholder='Descripcion'>
-                <input type="text" name="pais" placeholder='País'>
+                <select name="pais">
+                    <option value=""></option>
+                    <?php
+
+                    while($filas = mysqli_fetch_assoc($resultado)) {
+                        echo('<option value="' . $filas["NomPais"] . '">' . $filas["NomPais"] . '</option>');
+                    }
+                    ?>
+                </select>
                 <input class="button" type="submit" value='Crear'>
             </form>
         </div>
