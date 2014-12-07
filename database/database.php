@@ -55,4 +55,49 @@ class database {
 
     }
 
-} 
+    public function newUser($NomUsuario, $password, $email, $sexo, $FNacimiento, $Ciudad, $Pais, $Foto){
+        $sentencia = "INSERT INTO usuarios(NomUsuario, password, email, sexo, FNacimiento, Ciudad, Pais, Foto) VALUES ('$NomUsuario', MD5('$password'), '$email', '$sexo', '$FNacimiento', '$Ciudad', '$Pais', '$Foto')" ;
+        $resultado = $this->mysqli->query($sentencia) or die(mysqli_error($this->mysqli));;
+
+        return $resultado;
+    }
+
+    public function updateUser($idUsu, $email, $sexo, $FNacimiento, $Ciudad, $Pais, $Foto){
+        $sentencia = "UPDATE usuarios SET email='$email', sexo='$sexo', FNacimiento='$FNacimiento', Ciudad='$Ciudad', Pais='$Pais', Foto='$Foto' where IdUsuarios='$idUsu'";
+        $resultado = $this->mysqli->query($sentencia) or die(mysqli_error($this->mysqli));;
+
+        return $resultado;
+    }
+    public function updatePass($idUsu, $pass){
+        $sentencia = "UPDATE usuarios SET password = MD5('$pass') where IdUsuarios='$idUsu'";
+        $resultado = $this->mysqli->query($sentencia) or die(mysqli_error($this->mysqli));;
+
+        return $resultado;
+    }
+    public function deleteUser($idUsu){
+        $sentencia = "DELETE from usuarios where IdUsuarios= ".$idUsu;
+        $resultado = $this->mysqli->query($sentencia) or die(mysqli_error($this->mysqli));;
+
+        return $resultado;
+    }
+
+    public function addAlbum($titulo, $descripcion, $fecha, $pais, $usuario){
+        $sentencia = "INSERT INTO albumes(Titulo, Descripcion, Fecha, Pais, Usuario) VALUES ('$titulo', '$descripcion', '$fecha', '$pais', '$usuario')";
+        $resultado = $this->mysqli->query($sentencia) or die(mysqli_error($this->mysqli));;
+
+        return $resultado;
+    }
+    public function addImagen($titulo, $descripcion, $fecha, $pais, $album, $usuario, $fichero){
+        if($album) $sentencia = "INSERT INTO fotos(Titulo, Descripcion, Fecha, Pais, Album, Usuario) VALUES ('$titulo', '$descripcion', '$fecha', '$pais', '$album' ,'$usuario')";
+        else $sentencia = "INSERT INTO fotos(Titulo, Descripcion, Fecha, Pais, Usuario) VALUES ('$titulo', '$descripcion', '$fecha', '$pais' ,'$usuario')";
+        $resultado = $this->mysqli->query($sentencia) or die(mysqli_error($this->mysqli));;
+        return $this->mysqli->insert_id;
+    }
+
+    public function addFotoAlbum($foto, $album){
+        $sentencia = "UPDATE fotos SET Album = '$album' where IdFoto= '$foto'";
+        $resultado = $this->mysqli->query($sentencia) or die(mysqli_error($this->mysqli));
+
+        return $resultado;
+    }
+}

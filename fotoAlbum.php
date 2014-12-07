@@ -16,6 +16,9 @@ else{
     $user = $_SESSION['usuarioSession'];
 }
 
+$error = $_GET['error'];
+$success = $_GET['success'];
+
 $db = new database();
 $conectada = $db->connect();
 
@@ -29,20 +32,24 @@ $albumes = $db->get($sentAlbumes);
 $db->close();
 
 
-require_once('partials/header.inc');
+require_once('partials/headerCuenta.inc');
 
 ?>
 <!--CONTENIDO-->
     <div id="cuerpoNuevoAlbum">
         <div class="crearAlbum">
             <h2>Crear Album</h2>
-            <form class='crearAlbumForm' action="formulario.php" method="get">
+            <?php
+            if($error) echo ('<p class="errorMsg">Contraseña incorrecta</p>');
+            else if($success) echo ('<p class="successMsg">Añadida con éxito</p>');
+            ?>
+            <form class='crearAlbumForm' action="addFotoAlbum.php" method="post">
                 <label for="foto">Foto</label>
                 <select name="foto">
                     <?php
 
                     while($filas = mysqli_fetch_assoc($fotos)) {
-                        echo('<option value="' . $filas["Titulo"] . '">' . $filas["Titulo"] . '</option>');
+                        echo('<option value="' . $filas["IdFoto"] . '">' . $filas["Titulo"] . '</option>');
                     }
                     ?>
                 </select>
@@ -51,7 +58,7 @@ require_once('partials/header.inc');
                     <?php
 
                     while($filas = mysqli_fetch_assoc($albumes)) {
-                        echo('<option value="' . $filas["Titulo"] . '">' . $filas["Titulo"] . '</option>');
+                        echo('<option value="' . $filas["IdAlbum"] . '">' . $filas["Titulo"] . '</option>');
                     }
                     ?>
                 </select>

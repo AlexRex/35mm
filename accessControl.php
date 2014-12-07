@@ -11,7 +11,9 @@ $db = new database();
 $conectada = $db->connect();
 
 $name = $_POST["name"];
-$password = $_POST["password"];
+$password = md5($_POST["password"]);
+
+
 
 $recordar = $_POST["recordar"];
 

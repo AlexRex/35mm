@@ -58,7 +58,7 @@ a:hover{
 
 #cuerpoNuevoAlbum{
     min-height: 80.1%;
-    padding-top: 60px;
+
     padding-bottom: 50px;
 }
 
@@ -211,6 +211,7 @@ a:hover{
 	margin-left: auto;
 }
 
+
 .contenedor{
 	width: 350px;
 	height: 120px;
@@ -223,6 +224,37 @@ a:hover{
 	width: 280px;
 	margin: 0 auto;
 	padding-top: 20px;
+}
+
+.actualizarForm{
+    width: 290px;
+    margin: 0 auto;
+    padding-top: 10px;
+
+}
+
+.errorMsg{
+    background: rgba(192, 57, 43, 0.7);
+    text-align: center;
+    color: white;
+    width: 250px;
+    margin: 20px auto 0;
+    height: 30px;
+    padding-top: 10px;
+    border-radius: 5px;
+
+}
+
+.successMsg{
+    background: rgba(39, 174, 96,0.7);
+    text-align: center;
+    color: white;
+    width: 250px;
+    margin: 20px auto 0;
+    height: 30px;
+    padding-top: 10px;
+    border-radius: 5px;
+
 }
 
 .busqueda{
@@ -264,7 +296,11 @@ a:hover{
 .crearAlbumForm input[type=text],
 .crearAlbumForm select,
 .registro select,
-.busqueda select{
+.busqueda select,
+.actualizarDatos select,
+.actualizarDatos form input[type=text],
+.actualizarDatos form input[type=password],
+.actualizarDatos form input[type=email]{
   width: 100%;
   height: 30px;
   margin-bottom: 10px;
@@ -281,8 +317,67 @@ input[type="search"], .login input[type='text'], .login input[type='password']{
     background-color:#bdc3c7;
 }
 
+.hidden{
+    display: none;
+}
+
+#confirmarEliminar{
+    position: absolute;
+    top: 0;
+    height: 120%;
+    width: 100%;
+    z-index: 20;
+    background: #fff;
+    text-align: center;
+    padding-top: 30%;
+
+}
 
 
+.formEliminar form input[type=password]{
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    margin-top: 15px;
+    background: #eee;
+    border: none;
+    outline: none;
+
+}
+
+button{
+    margin-top: 18px;
+    vertical-align: top;
+    width: 100px;
+    height: 25px;
+    padding: 0;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+
+}
+.eliminar{
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background: #c0392b;
+    border: 0;
+    border-bottom: 2px solid #b53224;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 -2px #b53224;
+    box-shadow: inset 0 -2px #b53224;
+}
+.cancelar{
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background: #27ae60;
+    border: 0;
+    border-bottom: 2px solid #219d55;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 -2px #219d55;
+    box-shadow: inset 0 -2px #219d55;
+    margin-left: 220px;
+}
 
 #navegacion{
 	width: 100%;
@@ -335,6 +430,11 @@ li{
 	padding-right: 30px;
 }
 
+
+.listDatosUsuario li{
+    display: block;
+    float: none;
+}
 
 
 /* #Nephritis Flat Button

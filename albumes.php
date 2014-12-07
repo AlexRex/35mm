@@ -4,7 +4,6 @@
 $title = "Mis Albumes / 35mm.com";
 
 
-require_once('partials/header.inc');
 
 require_once('database/database.php');
 
@@ -32,10 +31,13 @@ $resultado = $db->get($sentencia);
 
 $db->close();
 
+require_once('partials/headerCuenta.inc');
+
 ?>
 <!--CONTENIDO-->
 
-    <div id="cuerpoResBusq">
+<div id="cuerpoNuevoAlbum">
+    <div class="crearAlbum">
         <h2>Mis álbumes</h2>
         <div class="carouselResultado" >
             <ul id="listaResultado">
@@ -45,6 +47,7 @@ $db->close();
                     }
                 ?>
             </ul>
+        </div>
         </div>
     </div>
 
