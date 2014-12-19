@@ -19,8 +19,15 @@ $conectada = $db->connect();
 
 $resultado = $db->getAll('paises', 'NomPais', 'ASC');
 
-$error = $_GET['error'];
-$success = $_GET['success'];
+
+$msgError = array(0 => "Error desconocido.",
+    1 => "Es necesario introducir un título.",
+    2 => "El archivo ya existe.",
+    3 => "La extensión no es válida."
+    );
+
+$error = $msgError[$_GET['error']];
+
 
 $sentencia = "select * from albumes where Usuario = ". $user['IdUsuarios'];
 $albumes = $db->get($sentencia);
@@ -35,10 +42,9 @@ require_once('partials/headerCuenta.inc');
         <div class="crearAlbum">
             <h2>Subir imagen</h2>
             <?php
-            if($error) echo ('<p class="errorMsg">Debes introducir un título</p>');
-            else if($success) echo ('<p class="successMsg">Creado con éxito</p>');
+            if($error) echo ('<p class="errorMsg">'.$error.'</p>');
             ?>
-            <form class='crearAlbumForm' action="nuevaImagen.php" method="post">
+            <form class='crearAlbumForm' action="nuevaImagen.php" method="post" enctype="multipart/form-data">
                 <input type="text" name="titulo" placeholder='Título'>
                 <input type="text" name="fecha" placeholder='Fecha'>
                 <input type="text" name="descripcion" placeholder='Descripcion'>
@@ -61,6 +67,7 @@ require_once('partials/headerCuenta.inc');
                     }
                     ?>
                 </select>
+                <input type="file" name="fichero">
                 <input class="button" type="submit" value='Crear'>
             </form>
         </div>

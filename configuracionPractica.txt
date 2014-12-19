@@ -1,0 +1,11 @@
+# Configurar Practica
+
+## Base de Datos
+
+1. Crear una base de datos con nombre: 35mmDB
+2. Importar desde phpMyAdmin el script 35mmdb.sql.zip que creará todas las tablas con todas sus tuplas y las rellenará con datos. 
+3. Crear el siguiente usuario en mysql: *
+	usuario: alex
+	password: pass1234
+
+*Este usuario y contraseña pueden ser diferentes, todas las variables de acceso a la base de datos se encuentran en el fichero dbconfig.php dentro de la carpeta database. 

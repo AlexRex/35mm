@@ -9,7 +9,7 @@ $idFoto= $_GET["id"];
 session_start();
 $host  = $_SERVER['HTTP_HOST'];
 if(!isset($_SESSION['usuarioSession'])){
-    $extra = 'index.php';
+    $extra = 'index.php?error=1';
     header("Location: http://$host$uri/$extra");
     exit;
 }
@@ -43,7 +43,7 @@ require_once('partials/header.inc');
     <div id="cuerpoFoto">
         <div class="detalleFoto">
             <div class="foto">
-                <img src="img/foto.png" alt="">
+                <img src="<?php echo($foto['Fichero']) ?>" alt="">
                 <h2><?php echo($foto['Titulo']) ?></h2>
                 <p><?php echo($foto['Descripcion']) ?></p>
             </div>

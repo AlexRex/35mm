@@ -1,0 +1,29 @@
+[
+    {
+        "IdFoto": 92,
+        "Critica": "Es la pipa la foto, no?",
+        "Autor": "Sergio Luján Mora"
+    },
+
+    {
+        "IdFoto": 93,
+        "Critica": "Madre mía esto es pa 10. Increíble. Maravillosa. Una obra de arte",
+        "Autor": "Pipo"
+    },
+    {
+        "IdFoto": 94,
+        "Critica": "Madre mía esto es pa 10. Increíble. Maravillosa. Una obra de arte",
+        "Autor": "Pepe"
+    },
+    {
+        "IdFoto": 92,
+        "Critica": "Es enooorme esta verdad? Pues mas mola.",
+        "Autor": "Paco"
+    },
+
+    {
+        "IdFoto": 92,
+        "Critica": "Es enooorme esta verdad? Pues mas mola.",
+        "Autor": "Rubi"
+    }
+]

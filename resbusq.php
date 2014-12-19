@@ -18,7 +18,7 @@ require_once('database/database.php');
 $db = new database();
 $conectada = $db->connect();
 
-$sentencia = 'SELECT * FROM fotos left outer join paises on fotos.Pais = paises.IdPais where Titulo like "%'.$titBusq.'%" and nomPais like "%'.$paisBusq.'%" and Fecha like "%'.$fechaBusq.'%"';
+$sentencia = 'SELECT * FROM fotos left outer join paises on fotos.Pais = paises.IdPais where Titulo like "%'.$titBusq.'%" and nomPais like "%'.$paisBusq.'%" and Fecha like "%'.$fechaBusq.'%" order by idFoto DESC limit 14';
 
 
 $resultado = $db->get($sentencia);
@@ -52,7 +52,7 @@ $db->close();
                 <?php
 
                 while($filas = mysqli_fetch_assoc($resultado)) {
-                    echo('<li><a href="foto.php?id='.$filas['IdFoto'].'"><img src="img/img.png" alt=""/></a><h3>'.$filas["Titulo"].'</h3><div>'.$filas['NomPais'].'</div><div>'.$filas['Fecha'].'</div><div></div></li>');
+                    echo('<li><a href="foto.php?id='.$filas['IdFoto'].'"><img src="'.$filas["Fichero"].'" alt=""/></a><h3>'.$filas["Titulo"].'</h3><div>'.$filas['NomPais'].'</div><div>'.$filas['Fecha'].'</div><div></div></li>');
                 }
                 ?>
             </ul>

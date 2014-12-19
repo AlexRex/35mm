@@ -31,19 +31,20 @@ $resultado = $db->get($sentencia);
 $db->close();
 require_once('partials/headerCuenta.inc');
 ?>
-
+    <script src="js/"></script>
         <div class="fotosPerfil" >
 
-            <ul id="listaResultado">
+            <div id="am-container" class="am-container">
                 <?php
 
                 while($filas = mysqli_fetch_assoc($resultado)) {
-                    echo('<li><a href="foto.php?id='.$filas['IdFoto'].'"><img src="img/img.png" alt=""/></a><h3>'.$filas["Titulo"].'</h3><div>'.$filas['NomPais'].'</div><div>'.$filas['Fecha'].'</div><div></div></li>');
+                    echo('<div class="imageHolder"><a href="foto.php?id='.$filas['IdFoto'].'"><img class="miniatura" src="'.$filas['Fichero'].'" alt=""/><div class="caption"><h3>'.$filas['Titulo'].'</h3></div></a></div>');
                 }
                 ?>
-            </ul>
+            </div>
         </div>
     </div>
+
 
 <?php
 

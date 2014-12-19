@@ -16,9 +16,15 @@ $title = $user['NomUsuario']." / 35mm.com";
 
 
 
-$error = $_GET['error'];
-$success = $_GET['success'];
+$msgError = array(0 => "Error desconocido.",
+    1 => "Fichero no válido.",
+    2 => "El archivo ya existe.",
+    3 => "La extensión no es válida.",
+    4 => "Eliminada con éxito."
+);
 
+$error = $msgError[$_GET['error']];
+$success = $_GET['success'];
 $db = new database();
 $conectada = $db->connect();
 
@@ -43,10 +49,10 @@ require_once('partials/headerCuenta.inc');
 
         <div class="actualizarDatos">
             <?php
-            if($error) echo ('<p class="errorMsg">Contraseña incorrecta</p>');
+            if($error) echo ('<p class="errorMsg">'.$error.'</p>');
             else if($success) echo ('<p class="successMsg">Actualizado con éxito</p>');
             ?>
-            <form class="actualizarForm" action="actualizarSimple.php" method="post">
+            <form class="actualizarForm" action="actualizarSimple.php" method="post" enctype="multipart/form-data">
                 <input type="text" name="email" value="<?php if($datosUser['email']) echo $datosUser['email']; else echo " "?>" placeholder=<?php echo $datosUser['email']?>>
                 <input type="text" name="ciudad" value="<?php echo $datosUser['Ciudad']?>" placeholder=<?php echo $datosUser['Ciudad']?>>
                 <select name="pais">
@@ -83,9 +89,14 @@ require_once('partials/headerCuenta.inc');
                     ?>
                 </select><br/>
                 <label for="foto">Foto de perfil</label>
-                <input type="file" name="foto"/>
+                <input type="file" name="fichero"/>
+
+
                 <input class="button" type="submit" value='Actualizar'>
 
+            </form>
+            <form class="actualizarForm" action="eliminarFoto.php" method="post">
+                <Button type="submit" class="eliminar" value="Eliminar">Eliminar foto
             </form>
             <br/><br/>
 

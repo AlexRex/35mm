@@ -59,7 +59,7 @@ class database {
         $sentencia = "INSERT INTO usuarios(NomUsuario, password, email, sexo, FNacimiento, Ciudad, Pais, Foto) VALUES ('$NomUsuario', MD5('$password'), '$email', '$sexo', '$FNacimiento', '$Ciudad', '$Pais', '$Foto')" ;
         $resultado = $this->mysqli->query($sentencia) or die(mysqli_error($this->mysqli));;
 
-        return $resultado;
+        return $this->mysqli->insert_id;
     }
 
     public function updateUser($idUsu, $email, $sexo, $FNacimiento, $Ciudad, $Pais, $Foto){
@@ -88,8 +88,8 @@ class database {
         return $resultado;
     }
     public function addImagen($titulo, $descripcion, $fecha, $pais, $album, $usuario, $fichero){
-        if($album) $sentencia = "INSERT INTO fotos(Titulo, Descripcion, Fecha, Pais, Album, Usuario) VALUES ('$titulo', '$descripcion', '$fecha', '$pais', '$album' ,'$usuario')";
-        else $sentencia = "INSERT INTO fotos(Titulo, Descripcion, Fecha, Pais, Usuario) VALUES ('$titulo', '$descripcion', '$fecha', '$pais' ,'$usuario')";
+        if($album) $sentencia = "INSERT INTO fotos(Titulo, Descripcion, Fecha, Pais, Album, Usuario, Fichero) VALUES ('$titulo', '$descripcion', '$fecha', '$pais', '$album' ,'$usuario', '$fichero')";
+        else $sentencia = "INSERT INTO fotos(Titulo, Descripcion, Fecha, Pais, Usuario, Fichero) VALUES ('$titulo', '$descripcion', '$fecha', '$pais' ,'$usuario', '$fichero')";
         $resultado = $this->mysqli->query($sentencia) or die(mysqli_error($this->mysqli));;
         return $this->mysqli->insert_id;
     }
@@ -99,5 +99,9 @@ class database {
         $resultado = $this->mysqli->query($sentencia) or die(mysqli_error($this->mysqli));
 
         return $resultado;
+    }
+
+    public function lastId(){
+        return $this->mysqli->insert_id;
     }
 }

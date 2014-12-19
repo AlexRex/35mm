@@ -16,6 +16,12 @@ else if(isset($_COOKIE['usuarioRecordar']) && !isset($_SESSION['usuarioSession']
 }
 
 
+$msgError = array(0 => "Usuario o contraseña incorrectos.",
+    1=> "No estás loggeado."
+);
+
+$error = $msgError[$_GET['error']];
+
 ?>
 
 <!DOCTYPE html>
@@ -32,62 +38,67 @@ else if(isset($_COOKIE['usuarioRecordar']) && !isset($_SESSION['usuarioSession']
     <link rel="stylesheet" type="text/css" href="css/print.css" media="print">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
-    <script type="text/javascript" src="js/estilos.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+
+
 
 </head>
 <body>
-<div id="navegacion"><!--Barra de navg-->
-    <nav class="navegacion">
-        <ul>
-            <li><a href="../35mm/index.php"><h1>35mm.com</h1></a></li>
-            <li>
-                <form class='basicBusq' action="../35mm/resbusq.php">
-                    <input type="search" name="busq">
-                    <input type="submit" value="Buscar" >
-                </form>
-            </li>
-            <li><a href="../35mm/busqueda.php">Busqueda Avanzada</a></li>
-            <?php if($userLogged==false && $userRememb == false ){ ?>
-            <li id="login">
-                <form class='login' method="post" action="accessControl.php" onsubmit="return(validateLogin(this));">
-                    <input type="text" name="name" placeholder='Usuario'>
-                    <input type="password" name="password" placeholder='Contraseña'>
-                    <label>
-                        <input type="checkbox" name="recordar">
-                        Recordarme
-                    </label>
-                    <input type="submit" value='Entrar'>
+<div id="wrapper">
+    <div id="navegacion"><!--Barra de navg-->
+        <nav class="navegacion">
+            <ul>
+                <li><a href="../35mm/index.php"><h1>35mm.com</h1></a></li>
+                <li>
+                    <form class='basicBusq' action="../35mm/resbusq.php">
+                        <input type="search" name="busq">
+                        <input type="submit" value="Buscar" >
+                    </form>
+                </li>
+                <li><a href="../35mm/busqueda.php">Busqueda Avanzada</a></li>
+                <?php
+                if($error) echo ('<li class="errorMsgHeader">'.$error.'</li>');?>
 
-                </form>
-            </li>
-            <?php } else if($userRememb==true && $userLogged==false){ ?>
+                <?php if($userLogged==false && $userRememb == false ){ ?>
                 <li id="login">
-                    <form class='login' method="post" action="returnAccess.php">
-                        <label>Bienvenido de nuevo <?php echo($user); ?></label>
+                    <form class='login' method="post" action="accessControl.php" onsubmit="return(validateLogin(this));">
+                        <input type="text" name="name" placeholder='Usuario'>
+                        <input type="password" name="password" placeholder='Contraseña'>
+                        <label>
+                            <input type="checkbox" name="recordar">
+                            Recordarme
+                        </label>
                         <input type="submit" value='Entrar'>
-                    </form>
-                </li>
-                <li>
-                    <form action="salir.php">
-                        <input type="submit" value="Salir"/>
-                    </form>
-                </li>
-            <?php } else{ ?>
-                <li id="login">
-                    <a href="cuenta.php">Mi cuenta</a>
-                </li>
-                <li>
-                    <form action="salir.php">
-                        <input type="submit" value="Salir"/>
-                    </form>
-                </li>
-            <?php }?>
-            <li>
-                <select name="estilos" id="selEstilos">
 
-                </select>
-            </li>
-        </ul>
-    </nav>
-</div>
+                    </form>
+                </li>
+                <?php } else if($userRememb==true && $userLogged==false){ ?>
+                    <li id="login">
+                        <form class='login' method="post" action="returnAccess.php">
+                            <label>Bienvenido de nuevo <?php echo($user); ?></label>
+                            <input type="submit" value='Entrar'>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="salir.php">
+                            <input type="submit" value="Salir"/>
+                        </form>
+                    </li>
+                <?php } else{ ?>
+                    <li id="login">
+                        <a href="cuenta.php">Mi cuenta</a>
+                    </li>
+                    <li>
+                        <form action="salir.php">
+                            <input type="submit" value="Salir"/>
+                        </form>
+                    </li>
+                <?php }?>
+                <li>
+                    <select name="estilos" id="selEstilos">
+
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="contenedor">
