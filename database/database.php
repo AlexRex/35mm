@@ -44,7 +44,8 @@ class database {
 
     public function get($sentencia){
         //$sentencia = 'SELECT * FROM paises WHERE NomPais like "Englands"';
-        $resultado = $this->mysqli->query($sentencia);
+
+        $resultado = $this->mysqli->query($sentencia) or die(mysqli_error($this->mysqli));
 
         return $resultado;
     }

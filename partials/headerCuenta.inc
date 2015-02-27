@@ -47,6 +47,7 @@ require_once('database/database.php');
             <li class="floatRight"><a href="fotoAlbum.php">Añadir foto a álbum</a></li>
             <li class="floatRight"><a href="subirImagen.php">Subir nueva imágen</a></li>
             <li class="floatRight"><a href="crearAlbum.php">Crear álbum</a></li>
+            <li class="floatRight"><a href="descargarAlbum.php">Descargar álbum</a></li>
         </ul>
     </div>
 
